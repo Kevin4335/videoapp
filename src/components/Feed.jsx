@@ -1,8 +1,17 @@
 import {useState, useEffect} from 'react';
 import { Box,Stack, Typography } from '@mui/material';
+
+import { fetchFromAPI } from '../utils/fetchFromAPI';
 import {SideBar , Videos} from './';
 
 const Feed = () => {
+
+  
+
+  useEffect(() =>{
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
+  }, []);
+
   return (
     <Stack sx = {{flexDirection:{sx:"column", md:"row"}}}>
       <Box sx = {{height: {sx:'auto', md:'92vh'}, borderRight:'3px solid #2C1E74', px:{sx:0,md:2}}}>
