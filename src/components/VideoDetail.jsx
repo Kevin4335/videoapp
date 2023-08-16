@@ -16,11 +16,12 @@ const VideoDetail = () => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
     .then((data)=> setVideoDetail(data.items[0]));
 
-    fetchFromAPI(`search?part=snippet&relatedToVideoId={id}&type=video`)
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
     .then((data)=>setVideos(data.items));
   }, [id]);
 
   if(!videoDetail?.snippet) return 'loading...'
+
   const {snippet: {title, channelId, channelTitle}, statistics: {viewCount, likeCount}} = videoDetail;
 
   return (
