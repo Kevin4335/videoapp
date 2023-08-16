@@ -7,9 +7,7 @@ const Navbar = () => (
     <Link to="/" style = {{display:'flex', alignItems:'center'}}> 
       <img src= {require("../utils/logos/playbutton.png")} alt = "logo" height = {50} />
     </Link>
-    <SearchBar>
-      
-    </SearchBar>
+    <SearchBar/>
   </Stack>
 )
 export default Navbar

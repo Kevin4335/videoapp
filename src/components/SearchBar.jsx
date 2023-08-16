@@ -5,6 +5,7 @@ import { Paper, IconButton } from '@mui/material'
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate=useNavigate();
+  
   const handleSubmit = (e) =>{
     e.preventDefault();
     if(searchTerm){
